@@ -7,7 +7,31 @@
       "Bash(curl -sL -o test.jpg \"https://picsum.photos/id/237/800/600\")",
       "Bash(curl -sL -o test.jpg \"https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80\")",
       "WebSearch",
-      "WebFetch(domain:unsplash.com)"
+      "WebFetch(domain:unsplash.com)",
+      "Bash(curl -sL --max-time 30 \"https://loremflickr.com/600/400/india,doctor/all?lock=1\" -o /tmp/test1.jpg)",
+      "Bash(curl -sL --max-time 30 -w \"HTTP %{http_code} final=%{url_effective} size=%{size_download}\\\\n\" \"https://loremflickr.com/600/400/baby\" -o /tmp/t.jpg)",
+      "Bash(curl -sI --max-time 20 https://picsum.photos/200)",
+      "Bash(curl -sL --max-time 30 \"https://loremflickr.com/600/400/baby,india\" -o a1.jpg)",
+      "Bash(curl -sL --max-time 30 \"https://loremflickr.com/600/400/baby,india\" -o a2.jpg)",
+      "Bash(curl -sL --max-time 30 \"https://loremflickr.com/600/400/pregnant,india\" -o a3.jpg)",
+      "Bash(md5 a1.jpg a2.jpg a3.jpg)",
+      "Bash(chmod +x /tmp/dl_services.sh)",
+      "Bash(/tmp/dl_services.sh)",
+      "Bash(pkill -f dl_services.sh)",
+      "Bash(:)",
+      "Bash(md5 -q *.jpg)",
+      "Bash(python3 /tmp/insert_media.py)",
+      "Bash(file *.jpg)",
+      "Bash(python3 -)",
+      "Bash(curl -sL --max-time 30 \"https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=newborn%20baby%20hospital%20filemime:image/jpeg&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url|mime&iiurlwidth=640&format=json\" -H \"User-Agent: ClinicSiteBot/1.0 \\(contact: affiliate@myscoot.in\\)\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(rm -f *.jpg)",
+      "Bash(python3 /tmp/dl_commons.py)",
+      "Bash(command -v montage)",
+      "Bash(montage obg-*.jpg ped-*.jpg -tile 6x4 -geometry 200x150+4+4 -title \"services\" /tmp/contact.jpg)",
+      "Bash(python3 -c \"import PIL; print\\('PIL ok', PIL.__version__\\)\")",
+      "Bash(python3 /tmp/refetch.py)",
+      "Bash(grep -vE '^fa-\\(solid|brands|regular|light|thin|duotone|fw|spin|pulse|lg|sm|xs|2x|3x|stack\\)$')"
     ]
   }
 }
